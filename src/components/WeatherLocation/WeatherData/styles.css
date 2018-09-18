@@ -1,0 +1,15 @@
+.WeatherDataCont{
+    width: 400px;
+    height: 100px;
+    line-height: 100px;
+}
+
+.WeatherExtraInforCont{
+    width: 40%;
+    display: inline-block;
+}
+
+.WeatherTemperatureCont{
+    width: 60%;
+    display: inline-block;
+}
