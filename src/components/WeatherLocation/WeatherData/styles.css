@@ -1,10 +1,5 @@
-.App {
-    background-color: #F8A057;
-    width: 360px;
-    margin: 0 auto;
-    box-sizing: border-box;
+.container {
     padding: 40px 20px;
-    font-family: 'Titillium Web', sans-serif;
 }
 
 .locationCont{

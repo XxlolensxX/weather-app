@@ -7,6 +7,8 @@ import {
     SUN,
 } from './../../constants/weathers';
 
+import BackgroundCloudy from './../../images/background-weatherapp-cloudy.jpg';
+
 const APIKEY = '39c6b725ab948921f0e36eb928f419d0';
 const ENDPOINT = 'http://api.openweathermap.org/data/2.5/weather';
 const LOCATION = 'Santiago,cl';
@@ -35,15 +37,21 @@ class WeatherLocation extends Component {
             city: 'Santiago',
         })
             
-    }
+    };
 
+    
     render(){
         const { city, data } = this.state
+        const backgroundImage = {
+            backgroundImage: `url(${BackgroundCloudy})`
+        }
     return(
-        <div>
-            <Location city={city}/>
-            <WeatherData data={data}/>
-            <button onClick={this.handleUpdateClick}>Actualizar</button>
+        <div className="backgroundApp" style={backgroundImage}>
+            <div className="container">
+                <Location city={city}/>
+                <WeatherData data={data}/>
+                <button onClick={this.handleUpdateClick}>Actualizar</button>
+            </div>
         </div>
         );
     }

@@ -1,5 +1,7 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+.App {
+  background-color: #F8A057;
+  width: 360px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  font-family: 'Titillium Web', sans-serif;
 }
