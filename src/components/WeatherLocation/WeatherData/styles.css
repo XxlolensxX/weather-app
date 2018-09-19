@@ -1,15 +1,58 @@
+.App {
+    background-color: #F8A057;
+    width: 360px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 40px 20px;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.locationCont{
+    text-align: left;
+    color: white;
+}
+
+.locationInfoCont {
+    width: 100%;
+}
+
+.locationInfoCont .locationTitle {
+    font-size: 20px;
+    font-weight: 300;
+    margin: 0;
+    
+}
+
+.locationInfoCont .locationDate {
+    margin: 0;
+    font-size: 14px;
+    text-transform: capitalize;
+    
+}
+
+.weatherType {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+
 .WeatherDataCont{
-    width: 400px;
-    height: 100px;
-    line-height: 100px;
+
+}
+
+.WeatherDataCont .weatherTemperature{
+    font-size: 60px;
 }
 
 .WeatherExtraInforCont{
-    width: 40%;
-    display: inline-block;
+
 }
 
 .WeatherTemperatureCont{
-    width: 60%;
-    display: inline-block;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+
 }
