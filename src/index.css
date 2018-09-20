@@ -1,7 +1,8 @@
 .App {
   background-color: #F8A057;
-  width: 360px;
+  width: 375px;
   margin: 0 auto;
   box-sizing: border-box;
-  font-family: 'Titillium Web', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  height: 812px;
 }

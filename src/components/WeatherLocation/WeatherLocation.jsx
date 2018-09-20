@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Location from './Location';
 import WeatherData from './WeatherData/WeatherData.jsx';
+import WeatherExtraInfo from './WeatherData/WeatherExtraInfo';
 import PropTypes from 'prop-types';
 
 import {
@@ -48,8 +49,12 @@ class WeatherLocation extends Component {
     return(
         <div className="backgroundApp" style={backgroundImage}>
             <div className="container">
+                <div>
                 <Location city={city}/>
                 <WeatherData data={data}/>
+                </div>
+
+                <WeatherExtraInfo humidity={20} wind={'10 m/s'}/>
                 <button onClick={this.handleUpdateClick}>Actualizar</button>
             </div>
         </div>
@@ -59,6 +64,8 @@ class WeatherLocation extends Component {
 
 WeatherLocation.propTypes = {
     city: PropTypes.string.isRequired,
+    humidity: PropTypes.number.isRequired,
+    wind: PropTypes.string.isRequired,
 }
 
 export default WeatherLocation;
