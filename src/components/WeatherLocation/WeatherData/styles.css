@@ -1,5 +1,14 @@
 .container {
     padding: 40px 20px;
+    position: relative;
+}
+
+.mainInfoCont{
+    flex-direction: column;
+    height: 470px;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
 }
 
 .locationCont{
@@ -39,10 +48,43 @@
     font-size: 60px;
 }
 
-.WeatherExtraInforCont{
-
+.WeatherExtraInfoCont{
+    width: 100%;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    height: 200px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
+.WeatherExtraInfoMinTempCont,
+.WeatherExtraInfoWindCont,
+.WeatherExtraInfoHumidityCont,
+.WeatherExtraInfoMaxTempCont {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.WeatherExtraInfoItem {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    justify-content: center;
+}
+
+.WeatherExtraInfoItemRigth{
+    padding-left: 16px;
+}
+
+.WeatherExtraInfoItemRigth .WeatherExtraInfoItemLabel {
+    margin: 0;
+    color: #E7E7E8;
+    font-weight: 300;
+    font-size: 14px;
+}
 .WeatherTemperatureCont{
     width: 100%;
     display: flex;

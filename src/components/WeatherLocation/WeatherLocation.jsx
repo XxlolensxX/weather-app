@@ -1,25 +1,20 @@
 import React, { Component } from 'react';
+import transformWeather from './../../services/transfromWeather';
+import { QUERY } from './../../constants/keys';
 import Location from './Location';
 import WeatherData from './WeatherData/WeatherData.jsx';
 import WeatherExtraInfo from './WeatherData/WeatherExtraInfo';
 import PropTypes from 'prop-types';
 
-import {
-    SUN,
-} from './../../constants/weathers';
-
 import BackgroundCloudy from './../../images/background-weatherapp-cloudy.jpg';
-
-const APIKEY = '39c6b725ab948921f0e36eb928f419d0';
-const ENDPOINT = 'http://api.openweathermap.org/data/2.5/weather';
-const LOCATION = 'Santiago,cl';
-const QUERY = `${ENDPOINT}?q=${LOCATION}&appid=${APIKEY}`;
 
 const data = {
     temperature: 5,
-    weatherState: SUN,
+    weatherState: "SUN",
     humidity: 10,
-    wind: '10 m/s'
+    wind: '10 m/s',
+    minTemp: 1,
+    maxTemp: 100
 }
 
 class WeatherLocation extends Component {
@@ -32,15 +27,21 @@ class WeatherLocation extends Component {
     }
 
     handleUpdateClick = () => {
-        console.log('Updated');
-        fetch(QUERY);
-        this.setState({
-            city: 'Santiago',
-        })
+        fetch(QUERY).then( resolve => {
+            return resolve.json().then(data => {
+                const newWeather = transformWeather(data);
+                console.log(newWeather);
+                    this.setState({
+                        city: 'Santiago',
+                        data: newWeather
+                    });
+                }
+            );
+        });
+
             
     };
 
-    
     render(){
         const { city, data } = this.state
         const backgroundImage = {
@@ -49,12 +50,12 @@ class WeatherLocation extends Component {
     return(
         <div className="backgroundApp" style={backgroundImage}>
             <div className="container">
-                <div>
+                <div className="mainInfoCont">
                 <Location city={city}/>
                 <WeatherData data={data}/>
                 </div>
 
-                <WeatherExtraInfo humidity={20} wind={'10 m/s'}/>
+                <WeatherExtraInfo humidity={data.humidity} wind={data.wind} minTemp={data.minTemp} maxTemp={data.maxTemp}/>
                 <button onClick={this.handleUpdateClick}>Actualizar</button>
             </div>
         </div>
