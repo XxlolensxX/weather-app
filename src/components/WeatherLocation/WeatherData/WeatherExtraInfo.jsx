@@ -7,37 +7,37 @@ import './styles.css';
     <div className="WeatherExtraInfoCont">
         <div className="WeatherExtraInfoMinTempCont">
             <div className="WeatherExtraInfoItem">
-                <WeatherIcons className="weatherIcon" name="thermometer-exterior" size="2x" />
+                <WeatherIcons className="WeatherIcon" name="thermometer-exterior" size="2x" />
                 <div className="WeatherExtraInfoItemRigth">
-                    <p className="WeatherExtraInfoItemLabel">Min Temperature</p>
-                    {`${minTemp} C`}
+                    <p className="WeatherExtraInfoItemLabel">Min Temp</p>
+                    <span className="WeatherExtraInfoItemInfo">{`${minTemp}C`}</span>
                 </div>
             </div>
         </div>
         <div className="WeatherExtraInfoWindCont">
             <div className="WeatherExtraInfoItem">
-                <WeatherIcons className="weatherIcon" name="thermometer" size="2x" />
+                <WeatherIcons className="WeatherIcon" name="thermometer" size="2x" />
                 <div className="WeatherExtraInfoItemRigth">
-                    <p className="WeatherExtraInfoItemLabel">Max Temperature</p>
-                    {`${maxTemp} C`}
+                    <p className="WeatherExtraInfoItemLabel">Max Temp</p>
+                    <span className="WeatherExtraInfoItemInfo">{`${maxTemp}C`}</span>
                 </div>
             </div>
         </div>
         <div className="WeatherExtraInfoHumidityCont">
             <div className="WeatherExtraInfoItem">
-                <WeatherIcons className="weatherIcon" name="humidity" size="2x" />
+                <WeatherIcons className="WeatherIcon" name="humidity" size="2x" />
                 <div className="WeatherExtraInfoItemRigth">
                     <p className="WeatherExtraInfoItemLabel">Humidity</p>
-                    {`${humidity} % `}
+                    <span className="WeatherExtraInfoItemInfo">{`${humidity}% `}</span>
                 </div>
             </div>
         </div>
         <div className="WeatherExtraInfoMaxTempCont">
             <div className="WeatherExtraInfoItem">
-                <WeatherIcons className="weatherIcon" name="strong-wind" size="2x" />
+                <WeatherIcons className="WeatherIcon" name="strong-wind" size="2x" />
                 <div className="WeatherExtraInfoItemRigth">
                     <p className="WeatherExtraInfoItemLabel">Wind</p>
-                    {`${wind}`}
+                    <span className="WeatherExtraInfoItemInfo">{`${wind}`}</span>
                 </div>
             </div>
         </div>

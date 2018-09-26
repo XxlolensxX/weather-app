@@ -55,8 +55,8 @@ class WeatherLocation extends Component {
                 <WeatherData data={data}/>
                 </div>
 
-                <WeatherExtraInfo humidity={data.humidity} wind={data.wind} minTemp={data.minTemp} maxTemp={data.maxTemp}/>
                 <button onClick={this.handleUpdateClick}>Actualizar</button>
+                <WeatherExtraInfo humidity={data.humidity} wind={data.wind} minTemp={data.minTemp} maxTemp={data.maxTemp}/>
             </div>
         </div>
         );
