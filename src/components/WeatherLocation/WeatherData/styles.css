@@ -1,5 +1,4 @@
 .container {
-    padding: 40px 20px;
     position: relative;
 }
 
@@ -8,7 +7,7 @@
     height: 470px;
     display: flex;
     justify-content: space-between;
-    padding-bottom: 20px;
+    padding: 40px 20px;
 }
 
 .locationCont{
@@ -105,4 +104,24 @@
     align-items: center;
     color: #fff;
 
+}
+
+.WeaklyListCont{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 100%;
+    background-color: #fff;
+    font-size: 12px;
+}
+
+.WeaklyListCont .WeaklyListItem {
+    padding: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.WeaklyListCont .WeaklyListItem .WeaklyListItemPharagraphp{
+    margin: 0;
 }

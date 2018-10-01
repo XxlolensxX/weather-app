@@ -1,49 +1,53 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import CircularProgress from '@material-ui/core/CircularProgress';
+
 import transformWeather from './../../services/transfromWeather';
-import { QUERY } from './../../constants/keys';
+import getUrlByCity from './../../services/getUrlByCity';
+
 import Location from './Location';
 import WeatherData from './WeatherData/WeatherData.jsx';
 import WeatherExtraInfo from './WeatherData/WeatherExtraInfo';
-import PropTypes from 'prop-types';
+import WeklyList from './WeatherData/WeklyList.jsx';
 
 import BackgroundCloudy from './../../images/background-weatherapp-cloudy.jpg';
 
-const data = {
-    temperature: 5,
-    weatherState: "SUN",
-    humidity: 10,
-    wind: '10 m/s',
-    minTemp: 1,
-    maxTemp: 100
-}
-
 class WeatherLocation extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        
+        super(props);
+        
+        const { city } = props;
+
         this.state = {
-            city: 'Buenos Aires',
-            data: data
+            city,
+            data: null
         }
     }
 
+    componentDidMount(){
+        this.handleUpdateClick();
+    }
+
     handleUpdateClick = () => {
-        fetch(QUERY).then( resolve => {
+
+        const query = getUrlByCity(this.state.city); 
+
+        fetch(query).then( resolve => {
             return resolve.json().then(data => {
                 const newWeather = transformWeather(data);
-                console.log(newWeather);
-                    this.setState({
-                        city: 'Santiago',
-                        data: newWeather
-                    });
+                this.setState({
+                    data: newWeather
+                });
                 }
             );
         });
-
-            
     };
 
+    
     render(){
-        const { city, data } = this.state
+        const { city, data } = this.state;
+    
         const backgroundImage = {
             backgroundImage: `url(${BackgroundCloudy})`
         }
@@ -51,12 +55,21 @@ class WeatherLocation extends Component {
         <div className="backgroundApp" style={backgroundImage}>
             <div className="container">
                 <div className="mainInfoCont">
-                <Location city={city}/>
-                <WeatherData data={data}/>
-                </div>
+                    <Location city={city}/>
+                        { data ?    
 
-                <button onClick={this.handleUpdateClick}>Actualizar</button>
-                <WeatherExtraInfo humidity={data.humidity} wind={data.wind} minTemp={data.minTemp} maxTemp={data.maxTemp}/>
+                        <WeatherData data={data}/>               
+                        :
+                        <CircularProgress />
+                    }
+                </div>
+                    <WeklyList data={data} />
+                
+                    { data ? 
+                    <WeatherExtraInfo humidity={data.humidity} wind={data.wind} tempMin={data.tempMin} tempMax={data.tempMax} /> :
+                    <CircularProgress />
+                    }
+                
             </div>
         </div>
         );
@@ -67,6 +80,9 @@ WeatherLocation.propTypes = {
     city: PropTypes.string.isRequired,
     humidity: PropTypes.number.isRequired,
     wind: PropTypes.string.isRequired,
+    tempMin: PropTypes.number.isRequired,
+    maxTemp: PropTypes.number.isRequired,
+    
 }
 
 export default WeatherLocation;

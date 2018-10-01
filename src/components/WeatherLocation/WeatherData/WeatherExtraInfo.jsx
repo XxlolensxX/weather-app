@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import WeatherIcons from 'react-weathericons';
 import './styles.css';
 
- const WeatherExtraInfo = ({ humidity, wind, minTemp, maxTemp }) => (
+ const WeatherExtraInfo = ({ humidity, wind, tempMin, tempMax }) => (
     <div className="WeatherExtraInfoCont">
         <div className="WeatherExtraInfoMinTempCont">
             <div className="WeatherExtraInfoItem">
                 <WeatherIcons className="WeatherIcon" name="thermometer-exterior" size="2x" />
                 <div className="WeatherExtraInfoItemRigth">
                     <p className="WeatherExtraInfoItemLabel">Min Temp</p>
-                    <span className="WeatherExtraInfoItemInfo">{`${minTemp}C`}</span>
+                    <span className="WeatherExtraInfoItemInfo">{`${tempMin}C`}</span>
                 </div>
             </div>
         </div>
@@ -19,7 +19,7 @@ import './styles.css';
                 <WeatherIcons className="WeatherIcon" name="thermometer" size="2x" />
                 <div className="WeatherExtraInfoItemRigth">
                     <p className="WeatherExtraInfoItemLabel">Max Temp</p>
-                    <span className="WeatherExtraInfoItemInfo">{`${maxTemp}C`}</span>
+                    <span className="WeatherExtraInfoItemInfo">{`${tempMax}C`}</span>
                 </div>
             </div>
         </div>

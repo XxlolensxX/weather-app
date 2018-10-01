@@ -1,11 +1,12 @@
-export const CLOUD = 'cloud';
+export const CLOUD = 'Clouds';
 
-export const CLOUDY = 'cloudy';
+export const SUN = 'Sun';
 
-export const SUN = 'sun';
+export const RAIN = 'Rain';
 
-export const RAIN = 'rain';
+export const SNOW = 'Snow';
 
-export const SNOW = 'snow';
+export const THUNDER = 'Thunderstorm';
 
-export const WINDY = 'windY';
+export const DRIZZLE = 'Drizzle';
+
