@@ -18,10 +18,9 @@ class WeatherLocation extends Component {
         super(props);
         
         const { city } = props;
-
+      
         this.state = {
-            city,
-            data: null
+            city
         }
     }
 
@@ -77,12 +76,7 @@ class WeatherLocation extends Component {
 };
 
 WeatherLocation.propTypes = {
-    city: PropTypes.string.isRequired,
-    humidity: PropTypes.number.isRequired,
-    wind: PropTypes.string.isRequired,
-    tempMin: PropTypes.number.isRequired,
-    maxTemp: PropTypes.number.isRequired,
-    
+    city: PropTypes.string.isRequired
 }
 
 export default WeatherLocation;

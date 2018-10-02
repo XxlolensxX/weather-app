@@ -1,12 +1,23 @@
 import React, { Component } from 'react';
-import WeatherLocation from './components/WeatherLocation/WeatherLocation.jsx'
+import Header from './components/SearchingHeader/Header.jsx';
+import WeatherLocation from './components/WeatherLocation/WeatherLocation.jsx';
 import './App.css';
 
 class App extends Component {
+
+  constructor(){
+    super();
+
+    this.state = { city :'Washington,us' };
+  }
   render() {
+
+    const { city } = this.state;
+
     return (
       <div className="App">
-        <WeatherLocation city="Washington,us"/>
+        <Header />
+        <WeatherLocation city={city}/>
       </div>
     );
   }

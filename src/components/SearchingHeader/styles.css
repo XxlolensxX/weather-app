@@ -1,0 +1,51 @@
+.WeatherAppHeader {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: rgb(79, 125, 201);
+    position: sticky;
+    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 2px 4px, rgba(0, 0, 0, 0.0980392) 0px 0px 3px;
+}
+
+.WeatherAppHeader form {
+    width: 100%;
+}
+
+.WeatherAppHeader .WeatherSearchInputCont {
+    position: relative;
+    width: 80%;
+    display: flex;
+    align-items: center;
+}
+
+.WeatherAppHeader .WeatherSearchInputCont .WeatherSearchInputText {
+    border: none;
+    height: 30px;
+    appearance: none;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    background-color: #f1f3f4;
+    border-bottom: 2px solid red;
+    padding: 8px;
+}
+
+.WeatherAppHeader .WeatherSearchInputCont .WeatherSearchInputText:focus {
+    outline: none;
+}
+
+.WeatherAppHeader .WeatherSearchInputCont .WeatherSearchInputText:focus ~ label{
+    font-size: 14px;
+    top: -16px;
+    color: red;
+    
+}
+
+.WeatherAppHeader .WeatherSearchInputCont .WeatherSearchInputTextLabel {
+    position: absolute;
+    z-index: 2;
+    left: 5px;
+    color: gray;
+    transition: 1s ease all;
+}

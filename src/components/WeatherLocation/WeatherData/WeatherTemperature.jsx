@@ -31,7 +31,8 @@ const getWeatherIcon = weatherState => {
         return <WeatherIcons name="day-sunny" size="4x" />;
 }
 
- const WeatherTemperature = ({ temperature, weatherState }) => (
+ const WeatherTemperature = ({ temperature, weatherState }) => {
+     return (
     <div className="WeatherTemperatureCont">
         <div className="weatherinfo">
             <span className="weatherTemperature">{ `${temperature} `}</span>
@@ -41,11 +42,12 @@ const getWeatherIcon = weatherState => {
             getWeatherIcon(weatherState)
         }
     </div>
- );
+    )
+ };
 
  //validate type of properties
  WeatherTemperature.propTypes = {
-     temperature: PropTypes.number.isRequired,
+     temperature: PropTypes.string.isRequired,
      weatherState: PropTypes.string.isRequired
  };
 

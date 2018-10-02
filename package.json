@@ -8,6 +8,8 @@
     "prop-types": "^15.6.2",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
+    "react-native-elements": "^0.19.1",
+    "react-native-material-design-searchbar": "^1.8.0",
     "react-scripts": "1.1.5",
     "react-weathericons": "^1.0.4"
   },
