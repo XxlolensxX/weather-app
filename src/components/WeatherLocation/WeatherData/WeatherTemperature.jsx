@@ -14,12 +14,12 @@ import {
 import './styles.css';
 
 const icons = {
-    [CLOUD]: 'day-cloudy',
-    [SUN]: 'day-sunny',
-    [RAIN]: 'day-rain',
-    [SNOW]: 'day-showers',
-    [THUNDER]: 'day-lightning',
-    [DRIZZLE]: 'day-showers'
+    [CLOUD]: 'cloudy',
+    [SUN]: 'sunny',
+    [RAIN]: 'rain',
+    [SNOW]: 'snow',
+    [THUNDER]: 'lightning',
+    [DRIZZLE]: 'showers'
 };
 
 

@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     padding: 20px;
-    background-color: rgb(79, 125, 201);
+    background-color: rgba(79, 125, 201, 0.3);
     position: sticky;
     box-shadow: rgba(0, 0, 0, 0.0980392) 0px 2px 4px, rgba(0, 0, 0, 0.0980392) 0px 0px 3px;
 }
@@ -20,14 +20,14 @@
 
 .WeatherAppHeader .WeatherSearchInputCont .WeatherSearchInputText {
     border: none;
-    height: 30px;
+    height: 20px;
     appearance: none;
     position: absolute;
     left: 0;
     width: 100%;
     z-index: 1;
     background-color: #f1f3f4;
-    border-bottom: 2px solid red;
+    border-bottom: 2px solid #24ADC5;
     padding: 8px;
 }
 
@@ -38,7 +38,8 @@
 .WeatherAppHeader .WeatherSearchInputCont .WeatherSearchInputText:focus ~ label{
     font-size: 14px;
     top: -16px;
-    color: red;
+    color: #24ADC5;
+    transition: 1s ease all;
     
 }
 
@@ -47,5 +48,5 @@
     z-index: 2;
     left: 5px;
     color: gray;
-    transition: 1s ease all;
+    top: 0;
 }

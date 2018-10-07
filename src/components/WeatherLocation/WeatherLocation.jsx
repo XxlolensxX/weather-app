@@ -9,10 +9,11 @@ import Location from './Location';
 import WeatherData from './WeatherData/WeatherData.jsx';
 import WeatherExtraInfo from './WeatherData/WeatherExtraInfo';
 import WeklyList from './WeatherData/WeklyList.jsx';
+import ForecastList from './../Forecast/ForecastList.jsx';
 
 import BackgroundCloudy from './../../images/background-weatherapp-cloudy.jpg';
 
-class WeatherLocation extends Component {
+export default class WeatherLocation extends Component {
     constructor(props) {
         
         super(props);
@@ -25,12 +26,25 @@ class WeatherLocation extends Component {
     }
 
     componentDidMount(){
-        this.handleUpdateClick();
+        this.handleUpdateCity(this.state.city);
     }
 
-    handleUpdateClick = () => {
+    componentWillReceiveProps(nextProps) {
+        if(nextProps.city !== this.props.city) {
+            this.setState({
+                city: nextProps.city,
+                data: null
+            });
+            
+            this.handleUpdateCity(nextProps.city);
 
-        const query = getUrlByCity(this.state.city); 
+        }
+
+    }
+
+    handleUpdateCity = (city) => {
+
+        const query = getUrlByCity(city); 
 
         fetch(query).then( resolve => {
             return resolve.json().then(data => {
@@ -45,30 +59,31 @@ class WeatherLocation extends Component {
 
     
     render(){
+
         const { city, data } = this.state;
-    
+
+        console.log(data);
+
         const backgroundImage = {
             backgroundImage: `url(${BackgroundCloudy})`
         }
+
     return(
         <div className="backgroundApp" style={backgroundImage}>
             <div className="container">
-                <div className="mainInfoCont">
-                    <Location city={city}/>
-                        { data ?    
-
-                        <WeatherData data={data}/>               
-                        :
-                        <CircularProgress />
-                    }
-                </div>
-                    <WeklyList data={data} />
-                
-                    { data ? 
-                    <WeatherExtraInfo humidity={data.humidity} wind={data.wind} tempMin={data.tempMin} tempMax={data.tempMax} /> :
+            { data ? 
+                <React.Fragment>
+                    <div className="mainInfoCont">
+                        <Location city={city} data={data}/>
+                        <WeatherData data={data}/>                    
+                    </div>
+                    <ForecastList />
+                    <WeklyList data={data} />                    
+                    <WeatherExtraInfo humidity={data.humidity} wind={data.wind} tempMin={data.tempMin} tempMax={data.tempMax} />
+                </React.Fragment> :
                     <CircularProgress />
-                    }
                 
+            }    
             </div>
         </div>
         );
@@ -78,5 +93,3 @@ class WeatherLocation extends Component {
 WeatherLocation.propTypes = {
     city: PropTypes.string.isRequired
 }
-
-export default WeatherLocation;

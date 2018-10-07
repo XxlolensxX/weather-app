@@ -8,7 +8,7 @@ const transformWeather = weather_data => {
     const { humidity, temp, temp_max, temp_min } = weather_data.main;
     const { speed } = weather_data.wind;
     const { main, description } = weather_data.weather[0];
-    const date = new Date().toDateString();
+    const { dt } = weather_data;
     const temperature = convertTemp(temp);
     const tempMin = convertTemp(temp_min);
     const tempMax = convertTemp(temp_max);
@@ -20,7 +20,7 @@ const transformWeather = weather_data => {
         wind: `${speed} m/s`,
         weatherState : main,
         description,
-        date
+        dt
     }
 
     return data;

@@ -1,0 +1,12 @@
+.ForecastListCont {
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    margin-bottom: 16px;
+    font-weight: 300;
+    font-size: 12px;
+}
+
+.ForecastItem .ForecastIcon{
+    margin: 8px 0;
+}
