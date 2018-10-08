@@ -2,9 +2,15 @@
     display: flex;
     justify-content: space-around;
     color: white;
-    margin-bottom: 16px;
     font-weight: 300;
     font-size: 12px;
+}
+
+.ForecastItem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 8px;
 }
 
 .ForecastItem .ForecastIcon{

@@ -5,10 +5,10 @@ import WeatherTemperature from './WeatherTemperature.jsx';
 
 import './styles.css';
 
-const WeatherData = ({ data: { temperature,weatherState } }) => {
+const WeatherData = ({ data: { temperature, weatherState, dt } }) => {
     return (
         <div className="WeatherDataCont">
-            <WeatherTemperature temperature={temperature} weatherState={weatherState}/>
+            <WeatherTemperature temperature={temperature} weatherState={weatherState} dt={dt}/>
         </div>
     );
 };

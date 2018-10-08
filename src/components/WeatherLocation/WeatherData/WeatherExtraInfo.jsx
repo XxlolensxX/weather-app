@@ -14,7 +14,7 @@ import './styles.css';
                 </div>
             </div>
         </div>
-        <div className="WeatherExtraInfoWindCont">
+        <div className="WeatherExtraInfoMaxTempCont">
             <div className="WeatherExtraInfoItem">
                 <WeatherIcons className="WeatherIcon" name="thermometer" size="2x" />
                 <div className="WeatherExtraInfoItemRigth">
@@ -32,7 +32,7 @@ import './styles.css';
                 </div>
             </div>
         </div>
-        <div className="WeatherExtraInfoMaxTempCont">
+        <div className="WeatherExtraInfoWindCont">
             <div className="WeatherExtraInfoItem">
                 <WeatherIcons className="WeatherIcon" name="strong-wind" size="2x" />
                 <div className="WeatherExtraInfoItemRigth">

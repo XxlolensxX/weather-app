@@ -16,6 +16,10 @@ const Location = ({ city, data : {dt, weatherState} }) => {
 
 Location.propTypes = {
     city: PropTypes.string.isRequired,
+    data: PropTypes.shape({
+        dt: PropTypes.number.isRequired,
+        weatherState: PropTypes.string.isRequired,
+    }),
 }
 
 export default Location;

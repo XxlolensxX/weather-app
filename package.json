@@ -9,10 +9,13 @@
     "prop-types": "^15.6.2",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
+    "react-icons": "^3.1.0",
     "react-native-elements": "^0.19.1",
     "react-native-material-design-searchbar": "^1.8.0",
+    "react-redux": "^5.0.7",
     "react-scripts": "1.1.5",
-    "react-weathericons": "^1.0.4"
+    "react-weathericons": "^1.0.4",
+    "redux": "^4.0.0"
   },
   "scripts": {
     "start": "react-scripts start",

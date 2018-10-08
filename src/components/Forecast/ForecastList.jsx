@@ -4,21 +4,21 @@ import ForecastItem from './ForecastItem.jsx';
 
 import { APIKEY, ENDPOINT_FORECAST } from './../../constants/keys';
 import forecastTransformData from './../../services/ForecastTransform';
+
 import './styles.css';
 
-//const query = `${ENDPOINT_FORECAST}?q=${city}&appid=${APIKEY}`;
-const query = `${ENDPOINT_FORECAST}?q=Santiago&appid=${APIKEY}`;
-
 export default class ForecastList extends Component{
-    constructor(){
-        super();
-
+    constructor(props){
+        super(props);
+        
         this.state = {
             newData : null
         };
     }
-
+    
     componentDidMount() {
+        const query = `${ENDPOINT_FORECAST}?q=${this.props.city}&appid=${APIKEY}`;
+
         fetch(query).then( resolve => {
             return resolve.json().then( forecastData => {
                 const newData = forecastTransformData(forecastData);

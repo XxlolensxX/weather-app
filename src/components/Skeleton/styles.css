@@ -1,0 +1,75 @@
+.skeletonContainer{
+    width: 100%;
+    background-color: skyblue;
+}
+.cont{
+    width: 80%;
+    margin: auto;
+}
+.skeletonH1{
+    width: 150px;
+    height: 30px;
+    margin: 4px 0;
+    animation: pulse 1s infinite ease-in-out;
+    -webkit-animation: pulse 1s infinite ease-in-out;
+}
+.skeletonP{
+    width: 200px;
+    height: 16px;
+    background-color: gray;
+    margin: 4px 0;
+    animation: pulse 1s infinite ease-in-out;
+    -webkit-animation: pulse 1s infinite ease-in-out;
+    
+}
+.skeletonH2{
+    width: 140px;
+    height: 25px;
+    background-color: gray;
+    margin: 1em 0;
+    animation: pulse 1s infinite ease-in-out;
+    -webkit-animation: pulse 1s infinite ease-in-out;
+}
+
+.squareImg {
+    width: 100px;
+    height: 100px;
+    animation: pulse 1s infinite ease-in-out;
+    -webkit-animation: pulse 1s infinite ease-in-out;
+}
+
+.roundImg{
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+}
+
+.flexBetween{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@keyframes pulse {
+    0%{
+        background-color: rgba(180,180,180,.1);
+    }
+    50%{
+        background-color: rgba(180,180,180,.3)
+    }
+    100%{
+        background-color: rgba(180,180,180,.1)
+    }
+}
+
+@-webkit-keyframes pulse {
+    0%{
+        background-color: rgba(165,165,165,.1);
+    }
+    50%{
+        background-color: rgba(165,165,165,.3)
+    }
+    100%{
+        background-color: rgba(165,165,165,.1)
+    }
+}

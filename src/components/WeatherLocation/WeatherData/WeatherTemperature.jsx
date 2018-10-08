@@ -1,6 +1,8 @@
 import React from 'react';
 import WeatherIcons from 'react-weathericons';
 import PropTypes from 'prop-types';
+import moment from 'moment';
+
 import {
     CLOUD,
     SUN,
@@ -23,23 +25,25 @@ const icons = {
 };
 
 
-const getWeatherIcon = weatherState => {
+const getWeatherIcon = (dt ,weatherState) => {
+
     const icon = icons[weatherState];
-    if (icon)
-        return <WeatherIcons name={icon} size="4x" />;
+    const hour = moment.unix(dt).hour();
+
+    if (icon && hour <= 9 && hour >= 19 )
+        return <WeatherIcons name={`day-${icon}`} size="4x" />;
     else 
-        return <WeatherIcons name="day-sunny" size="4x" />;
+        return <WeatherIcons name={`night-${icon}`} size="4x" />;
 }
 
- const WeatherTemperature = ({ temperature, weatherState }) => {
+ const WeatherTemperature = ({ temperature, weatherState, dt }) => {
      return (
     <div className="WeatherTemperatureCont">
         <div className="weatherinfo">
-            <span className="weatherTemperature">{ `${temperature} `}</span>
-            <span className="weatherMedition">Cº</span>
+            <span className="weatherTemperature">{ `${temperature} Cº`}</span>
         </div>
         {
-            getWeatherIcon(weatherState)
+            getWeatherIcon(dt, weatherState)
         }
     </div>
     )
